@@ -1,3 +1,7 @@
+#app {
+    border: solid 1px black;
+}
+
 .circle-image {
     border-radius: 50%;
     width: 50px;
@@ -13,7 +17,7 @@
 .bg-gray {
     background-color: #eee;
 }
-
+/*
 .debug {
     border: solid 1px black;
 }
@@ -21,7 +25,7 @@
 .debug-col {
     border: solid 1px red;
 }
-
+*/
 .ring-style {
     color: rgb(121, 222, 237);
     background-color: white;
@@ -39,12 +43,42 @@
     margin-bottom: 5px;
 }
 
-
-/*
 .bg-main {
-    height: 558.5px;
+    background-image: url("./img/mine.jpg");
+    background-repeat: repeat;
 }
-*/
+
+.input-group-text {
+    background: none;
+    border: none;
+}
+
+.left-message {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  
+}
+
+.right-message {
+    background-color: rgb(136, 238, 136);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons-container i {
+    margin-right: 10px;
+}
+
 
 
 
