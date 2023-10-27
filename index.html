@@ -16,7 +16,7 @@
 <body class="bg-custom">
 
     <div id="app" class="container-md">
-        
+
 
         <div class="row debug">
             <div class="col-4">
@@ -51,22 +51,23 @@
                                 <span class="border-0 input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input class="border-0 form-control" type="search" placeholder="Cerca o inizia una nuova chat">
+                                <input class="border-0 form-control" type="search"
+                                    placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                     </div>
-                     <div v-for="(contact, i) in contacts" :key="i" class="row debug pt-3 contact-row"
-                     :class="{'active' :i === currentIndex}">
-                    <div class="col-12 d-flex flex-row debug-col">
-                      <div class="pb-3">
-                        <img class="circle-image" :src="contact.avatar">
-                      </div>
-                      <div class="ms-2">
-                        <h6>{{ contact.name }}</h6>
-                        <p class="last-message-color">Ultimo messaggio inviato</p>
-                      </div>
+                    <div v-for="(contact, i) in contacts" :key="i" class="row debug pt-3 contact-row"
+                        :class="{'active' :i === currentIndex}" @click="setCurrentContact(i)">
+                        <div class="col-12 d-flex flex-row debug-col">
+                            <div class="pb-3">
+                                <img class="circle-image" :src="contact.avatar">
+                            </div>
+                            <div class="ms-2">
+                                <h6>{{ contact.name }}</h6>
+                                <p class="last-message-color">Ultimo messaggio inviato</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                     <!--  
                     <div class="row debug pt-3">
                         <div class="col-12 d-flex flex-row debug-col">
@@ -161,11 +162,11 @@
 
             </div>
 
-           
-               
-                 
-               
-             
+
+
+
+
+
 
 
 
@@ -188,17 +189,18 @@
                 </div>
                 <div class="row debug  bg-main flex-grow-1 d-flex">
                     <ul class="chat d-flex flex-column pt-3">
-						<li class="message sent ">Lorem ipsum dolor sit amet.</li>
-						<li class="message received">Lorem, ipsum dolor.</li>
-						<li class="message sent">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-							alias deserunt in.
-						</li>
-					</ul>
+                       <!-- <li class="message sent ">Lorem ipsum dolor sit amet.</li>
+                        <li class="message received">Lorem, ipsum dolor.</li>
+                        <li class="message sent">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt alias deserunt in.
+                        </li> --> 
+                        <li v-for="(message, index) in currentContact.messages" :key="index" :class="['message', message.status]">{{ message.message }}</li>
+                    </ul>
+                    
                 </div>
                 <div class="row debug">
                     <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
-                        
+
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fa-regular fa-face-smile"></i>
@@ -210,10 +212,10 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
-    </div>  
+    </div>
 
 
 

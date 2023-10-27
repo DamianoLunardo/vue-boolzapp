@@ -6,7 +6,8 @@ createApp({
   data: () => {
 
     return {
-      currentIndex: 7,
+      currentIndex: 0,
+      currentContact: 0,
       contacts: [
         {
           name: 'Michele',
@@ -171,6 +172,12 @@ createApp({
         }
       ]
     }
+  },
+  methods: {
+    setCurrentContact(index) {
+      this.currentIndex = index
+      this.currentContact = this.contacts[index]
+    },
   },
 
   mounted() {
