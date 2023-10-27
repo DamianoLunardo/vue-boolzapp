@@ -6,6 +6,7 @@ createApp({
   data: () => {
 
     return {
+      currentIndex: 7,
       contacts: [
         {
           name: 'Michele',
