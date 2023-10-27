@@ -10,6 +10,7 @@ createApp({
       currentContact: 0,
       newMessage: '',
       responseMessage: '',
+      searchByName: '',
       contacts: [
         {
           name: 'Michele',
@@ -194,6 +195,14 @@ createApp({
       }, 1000)
     }
   },
+  computed: {
+    filteredContacts() {
+      return this.contacts.filter(contact =>
+        contact.name.toLowerCase().includes(this.searchByName.toLowerCase())
+      );
+    },
+  },
+  
 mounted() {
     console.log('Ciao')
   }

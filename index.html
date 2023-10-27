@@ -51,12 +51,18 @@
                                 <span class="border-0 input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input class="border-0 form-control" type="search"placeholder="Cerca o inizia una nuova chat">
+                                <input class="border-0 form-control" type="search"placeholder="Cerca o inizia una nuova chat" v-model="searchByName">
                             </div>
                         </div>
                     </div>
-                    <div v-for="(contact, i) in contacts" :key="i" class="row debug pt-3 contact-row"
-                        :class="{'active' :i === currentIndex}" @click="setCurrentContact(i)">
+
+
+
+                    <div v-for="(contact, i) in filteredContacts" :key="i" class="row debug pt-3 contact-row"
+    :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
+    <!-- Contact details -->
+
+
                         <div class="col-12 d-flex flex-row debug-col">
                             <div class="pb-3">
                                 <img class="circle-image" :src="contact.avatar">
@@ -67,6 +73,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <!--  
                     <div class="row debug pt-3">
                         <div class="col-12 d-flex flex-row debug-col">
