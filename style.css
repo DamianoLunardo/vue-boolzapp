@@ -1,12 +1,18 @@
 #app {
-    border: solid 1px black;
-  /*  background: linear-gradient(
+    background-color: white;
+    margin-top: 80px;
+}
+
+.bg-custom {
+    background: linear-gradient(
         to bottom,
         #009688,
-        #009688 15vh,
-        #dddbd1 15vh,
+        #009688 13vh,
+        #dddbd1 13vh,
         #d2dbdc 100%
-    );*/
+    );
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .circle-image {
@@ -34,13 +40,19 @@
 }
 */
 
+ul,
+li,
+menu {
+	list-style: none;
+}
+
 .ring-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
     border-radius: 50%;
-    width: 50px;
+    width: 45px;
     height: 45px;
     background-color: white;
     color: rgb(121, 222, 237);
@@ -64,23 +76,6 @@
     border: none;
 }
 
-.left-message {
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-  
-}
-
-.right-message {
-    background-color: rgb(136, 238, 136);
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-}
-
 .icons-container {
     display: flex;
     justify-content: space-between;
@@ -96,10 +91,30 @@
     cursor: pointer;
 }
 
+.contact-row {
+    border-bottom: 1px solid #eee;
+}
+
 .last-message-color {
     color: gray;
 }
-  
+ 
+
+.message {
+	border-radius: 16px;
+	padding: 10px 20px;
+	max-width: 50%;
+}
+
+.message.sent {
+	background-color: #d5f9ba;
+	align-self: flex-end;
+ 
+}
+.message.received {
+	background-color: white;
+    align-self: flex-start;
+}
   
 
 
