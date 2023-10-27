@@ -13,7 +13,7 @@
     <title>Boolzapp</title>
 </head>
 
-<body>
+<body class="bg-custom">
 
     <div id="app" class="container-md">
         
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="row debug">
-                        <div class="col-12 debug-col bg-blue pt-1 pb-1 d-flex flex-row">
+                        <div class="col-12 debug-col bg-blue pt-1 pb-1 d-flex flex-row align-items-center">
                             <div>
                                 <i class="fa-solid fa-bell-slash ring-icon"></i>
                             </div>
@@ -55,13 +55,14 @@
                             </div>
                         </div>
                     </div>
-                     <div v-for="contact in contacts" :key="contact.name" class="row debug pt-3 contact-row">
+                     <div v-for="(contact, i) in contacts" :key="i" class="row debug pt-3 contact-row"
+                     :class="{'active' :i === currentIndex}">
                     <div class="col-12 d-flex flex-row debug-col">
-                      <div class="pt-1 pb-1">
+                      <div class="pb-3">
                         <img class="circle-image" :src="contact.avatar">
                       </div>
                       <div class="ms-2">
-                        <p>{{ contact.name }}</p>
+                        <h6>{{ contact.name }}</h6>
                         <p class="last-message-color">Ultimo messaggio inviato</p>
                       </div>
                     </div>
@@ -175,7 +176,7 @@
                             <img class="circle-image" src="./img/avatar_1.jpg">
                         </div>
                         <div class="ms-2">
-                            <p>Michele</p>
+                            <h6>{{ contacts[currentIndex].name }}</h6>
                             <p>Ultimo accesso oggi alle 12:00</p>
                         </div>
                         <div class="icons-container">
@@ -185,13 +186,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row debug  bg-main flex-grow-1">
-                    <div class="col-6  justify-content-center">
-                        <span class="left-message">QUA CI VANNO I MESSAGGI</span>
-                    </div>
-                    <div class="col-6  justify-content-center">
-                        <span class="right-message">QUA CI VANNO I MESSAGGI</span>
-                    </div>
+                <div class="row debug  bg-main flex-grow-1 d-flex">
+                    <ul class="chat d-flex flex-column pt-3">
+						<li class="message sent ">Lorem ipsum dolor sit amet.</li>
+						<li class="message received">Lorem, ipsum dolor.</li>
+						<li class="message sent">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+							alias deserunt in.
+						</li>
+					</ul>
                 </div>
                 <div class="row debug">
                     <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
@@ -210,10 +213,6 @@
                 
             </div>
         </div>
-        
- 
-    
-
     </div>  
 
 
