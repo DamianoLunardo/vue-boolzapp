@@ -8,6 +8,8 @@ createApp({
     return {
       currentIndex: 0,
       currentContact: 0,
+      newMessage: '',
+      responseMessage: '',
       contacts: [
         {
           name: 'Michele',
@@ -178,9 +180,21 @@ createApp({
       this.currentIndex = index
       this.currentContact = this.contacts[index]
     },
+    sendMessage() {
+      this.contacts[this.currentIndex].messages.push({
+        message: this.newMessage,
+        status: 'sent'
+      })
+      this.newMessage = ''
+      setTimeout(() => {
+        this.contacts[this.currentIndex].messages.push({
+          message: 'ok',
+          status: 'received'
+        })
+      }, 1000)
+    }
   },
-
-  mounted() {
+mounted() {
     console.log('Ciao')
   }
 }).mount('#app')

@@ -51,8 +51,7 @@
                                 <span class="border-0 input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input class="border-0 form-control" type="search"
-                                    placeholder="Cerca o inizia una nuova chat">
+                                <input class="border-0 form-control" type="search"placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                     </div>
@@ -189,14 +188,15 @@
                 </div>
                 <div class="row debug  bg-main flex-grow-1 d-flex">
                     <ul class="chat d-flex flex-column pt-3">
-                       <!-- <li class="message sent ">Lorem ipsum dolor sit amet.</li>
+                        <!-- <li class="message sent ">Lorem ipsum dolor sit amet.</li>
                         <li class="message received">Lorem, ipsum dolor.</li>
                         <li class="message sent">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt alias deserunt in.
-                        </li> --> 
-                        <li v-for="(message, index) in currentContact.messages" :key="index" :class="['message', message.status]">{{ message.message }}</li>
+                        </li> -->
+                        <li v-for="(message, index) in currentContact.messages" :key="index"
+                            :class="['message', message.status]">{{ message.message }}</li>
                     </ul>
-                    
+
                 </div>
                 <div class="row debug">
                     <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
@@ -205,14 +205,14 @@
                             <span class="input-group-text">
                                 <i class="fa-regular fa-face-smile"></i>
                             </span>
-                            <input class=" form-control mt-2 mb-2" type="search" placeholder="Scrivi un messaggio">
+                            <input class=" form-control mt-2 mb-2" type="search" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
                             <span class="input-group-text">
                                 <i class="fa-solid fa-microphone"></i>
                             </span>
                         </div>
+                        <div v-if="responseMessage" class="response-message">{{ responseMessage }}</div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
