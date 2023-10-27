@@ -14,10 +14,7 @@
 </head>
 
 <body class="bg-custom">
-
     <div id="app" class="container-md">
-
-
         <div class="row debug">
             <div class="col-4">
                 <div class="mycontainer">
@@ -51,30 +48,25 @@
                                 <span class="border-0 input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input class="border-0 form-control" type="search"placeholder="Cerca o inizia una nuova chat" v-model="searchByName">
+                                <input class="border-0 form-control" type="search"
+                                    placeholder="Cerca o inizia una nuova chat" v-model="searchByName">
                             </div>
                         </div>
                     </div>
-
-
-
-                    <div v-for="(contact, i) in filteredContacts" :key="i" class="row debug pt-3 contact-row"
-    :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
-    <!-- Contact details -->
-
-
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pb-3">
-                                <img class="circle-image" :src="contact.avatar">
-                            </div>
-                            <div class="ms-2">
-                                <h6>{{ contact.name }}</h6>
-                                <p class="last-message-color">Ultimo messaggio inviato</p>
+                    <div>
+                        <div v-for="(contact, i) in filteredContacts" :key="i" class="row debug pt-3 contact-row prova"
+                            :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
+                            <div class="col-12 d-flex flex-row debug-col">
+                                <div class="pb-3">
+                                    <img class="circle-image" :src="contact.avatar">
+                                </div>
+                                <div class="ms-2">
+                                    <h6>{{ contact.name }}</h6>
+                                    <p class="last-message-color">Ultimo messaggio inviato</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-
                     <!--  
                     <div class="row debug pt-3">
                         <div class="col-12 d-flex flex-row debug-col">
@@ -166,18 +158,8 @@
                     </div>
                     -->
                 </div>
-
             </div>
-
-
-
-
-
-
-
-
-
-            <div class="col-8 d-flex flex-column">
+            <div class="col-8 d-flex flex-column ">
                 <div class="row debug">
                     <div class="col-12 d-flex flex-row debug-col bg-gray align-items-center">
                         <div class="pt-1 pb-1">
@@ -204,16 +186,15 @@
                         <li v-for="(message, index) in currentContact.messages" :key="index"
                             :class="['message', message.status]">{{ message.message }}</li>
                     </ul>
-
                 </div>
                 <div class="row debug">
                     <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
-
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fa-regular fa-face-smile"></i>
                             </span>
-                            <input class=" form-control mt-2 mb-2" type="search" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
+                            <input class=" form-control mt-2 mb-2" type="search" placeholder="Scrivi un messaggio"
+                                v-model="newMessage" @keyup.enter="sendMessage">
                             <span class="input-group-text">
                                 <i class="fa-solid fa-microphone"></i>
                             </span>
