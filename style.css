@@ -119,4 +119,15 @@ menu {
   height: 900px;
 }
 
+p {
+  font-size: 13px;
+}
+
+.text-underline {
+  text-decoration: underline;
+  font-size: 10px;
+}
+
+
+
 
