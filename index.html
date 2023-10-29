@@ -38,7 +38,7 @@
                             </div>
                             <div class="ms-2">
                                 <p> Ricevi notifiche di nuovi messaggi</p>
-                                <span><u>Attiva notifiche desktop</u></span>
+                                <span class="text-underline">Attiva notifiche desktop</span>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                     <div>
                         <div v-for="(contact, i) in filteredContacts" :key="i" class="row debug pt-3 contact-row prova"
                             :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
-                            <div class="col-12 d-flex flex-row debug-col">
+                            <div class="col-10 d-flex flex-row debug-col">
                                 <div class="pb-3">
                                     <img class="circle-image" :src="contact.avatar">
                                 </div>
@@ -64,6 +64,12 @@
                                     <h6>{{ contact.name }}</h6>
                                     <p class="last-message-color">{{ getLastMessage(contact) }}</p>
                                 </div>
+                            </div>
+                            <div class="col-2 d-flex flex-row debug-col">
+                                <div class="pb-3">
+                                    <p>ORA</p>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -184,7 +190,17 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt alias deserunt in.
                         </li> -->
                         <li v-for="(message, index) in currentContact.messages" :key="index"
-                            :class="['message', message.status]">{{ message.message }}</li>
+                            :class="['message', message.status]">{{ message.message }}
+                            <button v-if="message.status === 'sent'" class="green-button"></i>
+                                <div class="dropdown  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">Message info</a></li>
+                                      <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                      
+                                    </ul>
+                                  </div> 
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="row debug">
@@ -205,11 +221,15 @@
             </div>
         </div>
     </div>
+     
+                                   
+                                   
+                                   
 
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="main.js"></script>
 </body>
