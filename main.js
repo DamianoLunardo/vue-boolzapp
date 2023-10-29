@@ -21,8 +21,12 @@ createApp({
       getLastTime: (contact) => {
         const lastMessage = contact.messages[contact.messages.length - 1];
         if (lastMessage) {
-          return lastMessage.date;
+          const date = new Date(lastMessage.date);
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          return `${hours}:${minutes}`;
         }
+        return "";
       },
       contacts: [
         {
@@ -63,7 +67,7 @@ createApp({
               status: 'received'
             },
             {
-              date: '20/03/2020 16:35:00',
+              date: '10/01/2020 13:18:22',
               message: 'Mi piacerebbe ma devo andare a fare la spesa.',
               status: 'sent'
             }
@@ -85,7 +89,7 @@ createApp({
               status: 'sent'
             },
             {
-              date: '28/03/2020 16:15:22',
+              date: '10/01/2020 18:37:22',
               message: 'Ah scusa!',
               status: 'received'
             }
@@ -119,7 +123,7 @@ createApp({
               status: 'sent'
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: '10/01/2020 19:48:00',
               message: 'Va bene, stasera la sento',
               status: 'received'
             }
@@ -158,7 +162,7 @@ createApp({
               status: 'sent'
             },
             {
-              date: '10/01/2020 15:50:00',
+              date: '10/01/2020 08:17:00',
               message: 'Grazie per avermelo ricordato, le scrivo subito!',
               status: 'received'
             }
@@ -180,7 +184,7 @@ createApp({
               status: 'sent'
             },
             {
-              date: '10/01/2020 15:51:00',
+              date: '10/01/2020 16:10:00',
               message: 'OK!!',
               status: 'received'
             }
