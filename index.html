@@ -15,11 +15,11 @@
 
 <body class="bg-custom">
     <div id="app" class="container-md">
-        <div class="row debug">
+        <div class="row">
             <div class="col-4">
                 <div class="mycontainer">
-                    <div class="row debug">
-                        <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
+                    <div class="row ">
+                        <div class="col-12 d-flex flex-row bg-gray align-items-center ">
                             <div class="pt-1 pb-1">
                                 <img class="circle-image" src="./img/avatar_io.jpg">
                                 <span class="name ms-2">Sofia</span>
@@ -31,8 +31,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row debug">
-                        <div class="col-12 debug-col bg-blue pt-1 pb-1 d-flex flex-row align-items-center">
+                    <div class="row">
+                        <div class="col-12  bg-blue pt-1 pb-1 d-flex flex-row align-items-center">
                             <div>
                                 <i class="fa-solid fa-bell-slash ring-icon"></i>
                             </div>
@@ -42,8 +42,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row debug">
-                        <div class="col-12 debug-col pt-1 pb-1 d-flex flex-row pt-3">
+                    <div class="row">
+                        <div class="col-12  pt-1 pb-1 d-flex flex-row pt-3">
                             <div class="input-group">
                                 <span class="border-0 input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -54,119 +54,29 @@
                         </div>
                     </div>
                     <div>
-                        <div v-for="(contact, i) in filteredContacts" :key="i" class="row debug pt-3 contact-row prova"
+                        <div v-for="(contact, i) in filteredContacts" :key="i" class="row  pt-3 contact-row prova"
                             :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
-                            <div class="col-10 d-flex flex-row debug-col">
+                            <div class="col-10 d-flex flex-row ">
                                 <div class="pb-3">
                                     <img class="circle-image" :src="contact.avatar">
                                 </div>
                                 <div class="ms-2">
                                     <h6>{{ contact.name }}</h6>
-                                    <p class="last-message-color">{{ getLastMessage(contact) }}</p>
+                                    <p>{{ getLastMessage(contact) }}</p>
                                 </div>
                             </div>
-                            <div class="col-2 d-flex flex-row debug-col">
+                            <div class="col-2 d-flex flex-row ">
                                 <div class="pb-3">
                                     <p>{{ getLastTime(contact) }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--  
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_1.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Michele</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_2.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Fabio</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_3.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Samuele</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_4.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Alessandro B.</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_5.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Alessandro L.</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_6.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Claudia</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_7.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Federico</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row debug pt-3">
-                        <div class="col-12 d-flex flex-row debug-col">
-                            <div class="pt-1 pb-1">
-                                <img class="circle-image" src="./img/avatar_8.jpg">
-                            </div>
-                            <div class="ms-2">
-                                <p>Davide</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
-            <div class="col-8 d-flex flex-column ">
-                <div class="row debug">
-                    <div class="col-12 d-flex flex-row debug-col bg-gray align-items-center">
+            <div class="col-8 d-flex flex-column">
+                <div class="row ">
+                    <div class="col-12 d-flex flex-row  bg-gray align-items-center">
                         <div class="pt-1 pb-1">
                             <img class="circle-image" src="./img/avatar_1.jpg">
                         </div>
@@ -181,13 +91,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row debug  bg-main flex-grow-1 d-flex">
+                <div class="row bg-main flex-grow-1 d-flex">
                     <ul class="chat d-flex flex-column pt-3">
-                        <!-- <li class="message sent ">Lorem ipsum dolor sit amet.</li>
-                        <li class="message received">Lorem, ipsum dolor.</li>
-                        <li class="message sent">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt alias deserunt in.
-                        </li> -->
                         <li v-for="(message, index) in currentContact.messages" :key="index"
                             :class="['message', message.status]">{{ message.message }}
                             <button v-if="message.status === 'sent'" class="green-button option-button">
@@ -195,15 +100,16 @@
                                     aria-expanded="false">
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Info messaggio</a></li>
-                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella Messaggio</a></li>
+                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella
+                                                Messaggio</a></li>
                                     </ul>
                                 </div>
                             </button>
                         </li>
                     </ul>
                 </div>
-                <div class="row debug">
-                    <div class="col-12 d-flex flex-row bg-gray align-items-center debug-col">
+                <div class="row">
+                    <div class="col-12 d-flex flex-row bg-gray align-items-center ">
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fa-regular fa-face-smile"></i>

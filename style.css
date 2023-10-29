@@ -30,15 +30,6 @@
 .bg-gray {
   background-color: #eee;
 }
-/*
-.debug {
-    border: solid 1px black;
-}
-
-.debug-col {
-    border: solid 1px red;
-}
-*/
 
 ul,
 li,
@@ -112,8 +103,6 @@ menu {
   background-color: white;
   align-self: flex-start;
 }
-
-
 
 .mycontainer {
   height: 900px;
