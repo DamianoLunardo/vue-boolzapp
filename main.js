@@ -200,6 +200,9 @@ createApp({
           status: 'received'
         })
       }, 1000)
+    },
+    deleteMessage(index) {
+      this.currentContact.messages.splice(index, 1);
     }
   },
   computed: {
