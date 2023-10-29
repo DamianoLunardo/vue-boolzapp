@@ -16,7 +16,13 @@ createApp({
         if (lastMessage) {
           return lastMessage.message;
         }
-        return "Nessun messaggio";
+
+      },
+      getLastTime: (contact) => {
+        const lastMessage = contact.messages[contact.messages.length - 1];
+        if (lastMessage) {
+          return lastMessage.date;
+        }
       },
       contacts: [
         {
@@ -212,8 +218,8 @@ createApp({
       );
     },
   },
- 
-mounted() {
+
+  mounted() {
     console.log('Ciao')
   }
 }).mount('#app')

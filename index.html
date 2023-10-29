@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-2 d-flex flex-row debug-col">
                                 <div class="pb-3">
-                                    <p>ORA</p>
+                                    <p>{{ getLastTime(contact) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -194,9 +194,8 @@
                                 <div class="dropdown  dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Message info</a></li>
-                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Delete
-                                                message</a></li>
+                                        <li><a class="dropdown-item" href="#">Info messaggio</a></li>
+                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Cancella Messaggio</a></li>
                                     </ul>
                                 </div>
                             </button>
