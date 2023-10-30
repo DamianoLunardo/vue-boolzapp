@@ -104,6 +104,10 @@ menu {
   align-self: flex-start;
 }
 
+body {
+  overflow: hidden;
+}
+
 .mycontainer {
   height: 900px;
 }
@@ -120,6 +124,11 @@ p {
 .option-button {
   border: none;
   background: none;
+}
+
+.contact-list {
+  max-height: 700px;
+  overflow-y: auto; 
 }
 
 
