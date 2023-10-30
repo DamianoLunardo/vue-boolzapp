@@ -206,6 +206,7 @@ createApp({
       this.newMessage = ''
       setTimeout(() => {
         this.contacts[this.currentIndex].messages.push({
+          date: '10/01/2020 16:10:00',
           message: 'ok',
           status: 'received'
         })
