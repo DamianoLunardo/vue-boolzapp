@@ -55,8 +55,10 @@
                     </div>
                     <div>
                     <div class="contact-list"> 
-                        <div v-for="(contact, i) in filteredContacts" :key="i" class="row  pt-3 contact-row"
-                            :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)">
+                        <div v-for="(contact, i) in contacts" :key="i" class="row  pt-3 contact-row"
+                            :class="{'active' : i === currentIndex}" @click="setCurrentContact(i)"
+                            v-show="contact.name.toLowerCase().includes(searchByName.toLowerCase())"
+                            >
                             <div class="col-10 d-flex flex-row ">
                                 <div class="pb-3">
                                     <img class="circle-image" :src="contact.avatar">
